@@ -30,18 +30,20 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang='en'>
-    <ThemeProvider
+    
+      <body>
+      <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-      <body>
       <Navbar />
        
         {children}
+        </ThemeProvider>
       </body>
-      </ThemeProvider>
+      
     </html>
   </ClerkProvider>
   );
