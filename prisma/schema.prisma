@@ -43,9 +43,9 @@ model Project {
   creatorId    String
   contributors User[]    @relation("Contributor")
   status       String
-  likes        Int
+  likes        Int  @default(0)
   comments     Comment[]
-  url          String
+  url          String?
   POW          POW[]
 }
 
