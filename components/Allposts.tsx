@@ -1,5 +1,6 @@
 import { prisma } from "@/utils/db";
-import { Link } from "lucide-react";
+import Link from "next/link";
+
 
 interface Post {
     id: string;
@@ -16,7 +17,7 @@ interface Post {
 
 
 
-const Allposts = async ({post : Post}) => {
+const Allposts = async ({post}) => {
 
 
 
@@ -32,14 +33,14 @@ const Allposts = async ({post : Post}) => {
       </div>
       <p className="text-gray-700 mb-2">{post.description}</p>
       <div className="flex items-center justify-between">
-        <a
-          href={post.url}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={"/projects/" + post.id}
+          
+          
           className="text-blue-500 hover:underline"
         >
           Visit
-        </a>
+        </Link>
         <div className="text-sm text-gray-500">
           {post.likes} {post.likes === 1 ? 'like' : 'likes'}
         </div>
